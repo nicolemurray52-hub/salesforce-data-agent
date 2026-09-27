@@ -1,0 +1,23 @@
+from __future__ import annotations
+
+from src.agent import ask
+
+
+SAMPLE_QUESTIONS = [
+    "What is the pipeline by stage?",
+    "What is our lead conversion rate?",
+    "How many open cases by status?",
+    "What is our monthly revenue trend?",
+    "Which opportunities are the highest value?",
+]
+
+
+if __name__ == "__main__":
+    for question in SAMPLE_QUESTIONS:
+        print(f"\nQuestion: {question}")
+        try:
+            result = ask(question)
+            print(result)
+        except Exception as exc:
+            print(f"Error: {exc}")
+            print("Check your Salesforce credentials and network connectivity.")
